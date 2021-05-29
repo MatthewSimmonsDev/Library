@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Gentium Book Basic", serif;
+}
+
+body {
+  color: #8d5aa5;
+  background-color: #3d8863;
+}
+
+.welcome-message {
+  font-size: 400%;
+  margin: 50px auto;
+}
+
+.message {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+}
+
+#add-container {
+  border: 5px solid #333;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  background-color: grey;
+  margin: auto;
+  display: block;
+}
+
+.add-message {
+  margin-top: 20px;
+  font-size: 300%;
+}
+
+.btn {
+  width: 150px;
+  height: 75px;
+  background-color: lightpink;
+  border-style: none;
+  border: 1px #333 solid;
+  border-radius: 5px;
+  font-size: 200%;
+  margin: 20px 24px;
+}
+
+.btn:hover {
+  background-color: lightyellow;
+}
+
+#list-container {
+  height: 500px;
+  width: 1500px;
+  border: 5px solid #333;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin: 50px auto 0px auto;
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  border: 5px solid #333;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+}
+
+.text {
+  font-size: 200%;
+  margin: 5px;
+}
