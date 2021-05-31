@@ -4,7 +4,12 @@ const listContainer = document.querySelector('#list-container');
 const overlay = document.querySelector('#overlay');
 const cancelBtn = document.querySelector('#cancel');
 const submitBtn = document.querySelector('#submit');
+const form = document.querySelectorAll('.form-input');
+const formTitle = document.querySelector('#form-title');
+const formAuthor = document.querySelector('#form-author');
+
 let myLibrary = [];
+let btnsArr = Array.from(form);
 
 function Book(title, author, pages, read){
   this.title = title;
@@ -75,37 +80,44 @@ function makeCard(){
     let div = document.querySelectorAll('.book-card')[book];
     div.appendChild(read);
   }
-
   
-  myLibrary.push(theHobbit);
-  myLibrary.push(theHobb);
-  myLibrary.push(test);
-  
-  for(let i = 0; i < myLibrary.length; i++){
-    createCard(i);
-  }
   
   function openForm(){
     overlay.style.display = 'block';
   }
-
+  
   function submitForm(){
+    acceptInput();
+    for(let i = 0; i < myLibrary.length; i++){
+      createCard(i);
+    }
     resetForm();
     closeForm();
   }
-
+  
+  function acceptInput(){
+    let title = formTitle.value;
+    let author = formAuthor.value;
+    myLibrary.push(new Book(title, author, '123', 'read') );
+    console.log(myLibrary);
+  }
+  
   function closeForm(){
     resetForm();
     overlay.style.display = 'none';
   }
-
+  
   function resetForm(){
-
+    
+    for(let i = 0; i < btnsArr.length; i++){
+      btnsArr[i].value = '';
+    }
   }
-
+  
   function learnToRead(){
     window.open("https://en.wikipedia.org/wiki/Reading", "_blank");
   }
+  
   
   yesBtn.addEventListener('click', openForm);
   noBtn.addEventListener('click', learnToRead);
