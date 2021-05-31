@@ -54,7 +54,7 @@ body {
   height: 500px;
   width: 1500px;
   border: 5px solid #333;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-top: 50px;
   margin: 50px auto 0px auto;
   background-color: grey;
@@ -64,7 +64,7 @@ body {
 
 .book-card {
   border: 5px solid #333;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 200px;
   height: 200px;
   background-color: rgb(65, 65, 65);
@@ -74,4 +74,57 @@ body {
 .text {
   font-size: 100%;
   margin: 20px 0px;
+}
+
+/* Popup form */
+#overlay {
+  height: 400px;
+  width: 400px;
+  background-color: grey;
+  z-index: 2;
+  position: fixed;
+  left: 38%;
+  display: none;
+  border-radius: 15px;
+  border: solid 5px #333;
+}
+
+.form {
+  display: block;
+}
+
+.form-input {
+  height: 10%;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+  border: 1px solid #333;
+  font-size: 200%;
+  text-align: center;
+}
+
+.form-input::placeholder {
+  font-size: 200%;
+  text-align: center;
+}
+
+#form-read-text {
+  font-size: 300%;
+  display: inline;
+  margin: auto 50px;
+}
+
+#form-read {
+  display: inline-block;
+  height: 10%;
+  width: 10%;
+}
+
+.form-btn {
+  display: block;
+  width: 50%;
+  height: 10%;
+  margin: 10px auto;
+  border-radius: 15px;
+  border: 1px solid #333;
 }

@@ -1,11 +1,9 @@
 const yesBtn = document.querySelector('.yes');
 const noBtn = document.querySelector('.no');
-// const bookTitle = document.querySelector('.card-title');
-// const bookAuthor = document.querySelector('.card-author');
-// const bookPages = document.querySelector('.card-pages');
-// const readBtn = document.querySelector('.read-btn');
 const listContainer = document.querySelector('#list-container');
-
+const overlay = document.querySelector('#overlay');
+const cancelBtn = document.querySelector('#cancel');
+const submitBtn = document.querySelector('#submit');
 let myLibrary = [];
 
 function Book(title, author, pages, read){
@@ -77,15 +75,39 @@ function makeCard(){
     let div = document.querySelectorAll('.book-card')[book];
     div.appendChild(read);
   }
+
   
   myLibrary.push(theHobbit);
   myLibrary.push(theHobb);
   myLibrary.push(test);
-  // myLibrary.forEach(item => createCard(item));
   
   for(let i = 0; i < myLibrary.length; i++){
     createCard(i);
   }
   
+  function openForm(){
+    overlay.style.display = 'block';
+  }
+
+  function submitForm(){
+    resetForm();
+    closeForm();
+  }
+
+  function closeForm(){
+    resetForm();
+    overlay.style.display = 'none';
+  }
+
+  function resetForm(){
+
+  }
+
+  function learnToRead(){
+    window.open("https://en.wikipedia.org/wiki/Reading", "_blank");
+  }
   
-  
+  yesBtn.addEventListener('click', openForm);
+  noBtn.addEventListener('click', learnToRead);
+  cancelBtn.addEventListener('click', closeForm);
+  submitBtn.addEventListener('click', submitForm);
