@@ -7,6 +7,8 @@ const submitBtn = document.querySelector('#submit');
 const form = document.querySelectorAll('.form-input');
 const formTitle = document.querySelector('#form-title');
 const formAuthor = document.querySelector('#form-author');
+const formPages = document.querySelector('#form-pages');
+const readStatus = document.querySelector('#form-read');
 
 let myLibrary = [];
 let btnsArr = Array.from(form);
@@ -23,15 +25,10 @@ Book.prototype.info = function(){
   return(`${title} by ${author}, ${pages}, ${read}`);
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', 'Read');
-const theHobb = new Book('theafsef', 'asdfasdf', '1134', 'not read');
-const test = new Book('asdf', 'asdf', '813', 'read');
-
-
+// Create book card and populate with data
 function createCard(book){
   makeCard();
   fill(book);
-    
   }
   
 function fill(book){
@@ -81,15 +78,16 @@ function makeCard(){
     div.appendChild(read);
   }
   
-  
+  // Form functions
   function openForm(){
     overlay.style.display = 'block';
   }
   
   function submitForm(){
     acceptInput();
-    for(let i = 0; i < myLibrary.length; i++){
+    for(let i = myLibrary.length - 1; i < myLibrary.length; i++){
       createCard(i);
+
     }
     resetForm();
     closeForm();
@@ -98,8 +96,13 @@ function makeCard(){
   function acceptInput(){
     let title = formTitle.value;
     let author = formAuthor.value;
-    myLibrary.push(new Book(title, author, '123', 'read') );
-    console.log(myLibrary);
+    let pages = formPages.value;
+    let read = 'Not read';
+    if (readStatus.checked){
+      read = 'Read';
+    }
+    myLibrary.push(new Book(title, author, pages, read) );
+    read = false;
   }
   
   function closeForm(){
@@ -114,6 +117,7 @@ function makeCard(){
     }
   }
   
+  // joke
   function learnToRead(){
     window.open("https://en.wikipedia.org/wiki/Reading", "_blank");
   }
