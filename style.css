@@ -5,7 +5,7 @@
 }
 
 body {
-  color: #8d5aa5;
+  color: #944db4;
   background-color: #3d8863;
 }
 
@@ -67,10 +67,11 @@ body {
   border-radius: 5px;
   width: 200px;
   height: 200px;
-  background-color: grey;
+  background-color: rgb(65, 65, 65);
+  text-align: center;
 }
 
 .text {
-  font-size: 200%;
-  margin: 5px;
+  font-size: 100%;
+  margin: 20px 0px;
 }
